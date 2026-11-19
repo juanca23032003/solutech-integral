@@ -22,6 +22,8 @@ git config core.hooksPath .githooks
 
 Los cambios guardados pero no confirmados no se publican. Revisa los cambios antes de confirmarlos: al crear un commit, este sitio público se actualizará automáticamente en GitHub Pages.
 
+En VS Code, usa **Control de código fuente**, revisa y prepara los archivos del sitio, y crea el commit. El hook de esta copia lo enviará a GitHub; no necesitas subir los archivos manualmente.
+
 - Sitio: <https://juanca23032003.github.io/solutech-integral/>
 - Repositorio: <https://github.com/juanca23032003/solutech-integral>
 
