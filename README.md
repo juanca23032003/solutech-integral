@@ -8,15 +8,22 @@ Sitio estático en español. No requiere instalar dependencias, configurar un se
 - `favicon.svg`: icono del sitio.
 - `robots.txt`: permite que los buscadores rastreen el sitio.
 
-## Publicar
+## Publicación y actualizaciones
 
-1. Conserva estos archivos juntos en una misma carpeta.
-2. Crea un sitio en un servicio de alojamiento para sitios estáticos y sube el contenido completo de la carpeta. Por ejemplo, puedes usar [Netlify Drop](https://app.netlify.com/drop) para una primera publicación manual, o cualquier alojamiento que acepte HTML estático.
-3. Configura `index.html` como página de inicio y habilita HTTPS en el alojamiento.
-4. Abre la dirección publicada desde un teléfono y un computador. Comprueba los enlaces de WhatsApp, llamada y correo, y envía un formulario de prueba.
-5. Si conectas un dominio propio, configúralo en el alojamiento y comprueba la dirección con y sin `www`.
+El sitio se publica gratis con GitHub Pages desde la rama `main` de este repositorio. No requiere compilación. Cada commit que llega a GitHub inicia automáticamente una publicación; normalmente tarda unos minutos.
 
-No se necesita compilar el sitio. Al hacer cambios, vuelve a subir los archivos actualizados.
+Esta carpeta está vinculada al repositorio `juanca23032003/solutech-integral`. El hook local `.githooks/post-commit` envía automáticamente a GitHub cada commit creado desde esta copia. Para habilitarlo en un clon nuevo:
+
+```powershell
+git clone https://github.com/juanca23032003/solutech-integral.git
+cd solutech-integral
+git config core.hooksPath .githooks
+```
+
+Los cambios guardados pero no confirmados no se publican. Revisa los cambios antes de confirmarlos: al crear un commit, este sitio público se actualizará automáticamente en GitHub Pages.
+
+- Sitio: <https://juanca23032003.github.io/solutech-integral/>
+- Repositorio: <https://github.com/juanca23032003/solutech-integral>
 
 ## Formulario y datos
 
@@ -30,4 +37,4 @@ El formulario no almacena ni envía datos a un servidor. Prepara un mensaje para
 - Revisa los requisitos de privacidad y protección de datos aplicables a tu país y a las instalaciones que realizas.
 - Cuando tengas el dominio, añade la URL canónica, una imagen de vista previa para redes y un `sitemap.xml` con la dirección real.
 
-El sitio usa enlaces relativos para sus recursos, de modo que puede alojarse en un dominio o directorio sin cambiar las rutas de archivos.
+El sitio usa enlaces relativos para sus recursos.

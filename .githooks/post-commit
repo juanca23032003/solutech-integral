@@ -1,0 +1,10 @@
+#!/bin/sh
+
+git push
+status=$?
+
+if [ "$status" -ne 0 ]; then
+  printf '%s\n' "Automatic push failed. Resolve the GitHub authentication or network issue, then run 'git push'." >&2
+fi
+
+exit "$status"
