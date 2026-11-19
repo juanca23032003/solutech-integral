@@ -124,16 +124,31 @@
         var(--navy);
       color: var(--white);
     }
-    .hero::after {
+    .hero::before {
       position: absolute;
-      top: 0;
-      right: -9%;
+        inset: -24%;
+        background-image:
+          radial-gradient(circle, rgb(104 238 218 / 35%) 1px, transparent 1.5px),
+          radial-gradient(ellipse at 72% 45%, rgb(36 214 189 / 13%), transparent 36%),
+          radial-gradient(ellipse at 25% 80%, rgb(40 101 166 / 18%), transparent 38%);
+        background-size: 42px 42px, 100% 100%, 100% 100%;
+        content: "";
+        opacity: .46;
+        mask-image: radial-gradient(ellipse at 69% 45%, #000 0%, transparent 69%);
+        pointer-events: none;
+        animation: ambient-drift 26s ease-in-out infinite alternate;
+    }
+    .hero::after {
+        position: absolute;
+        top: 0;
+        right: -9%;
       width: 48%;
       height: 100%;
       border-left: 1px solid rgb(255 255 255 / 5%);
       content: "";
       transform: skewX(-19deg);
       pointer-events: none;
+      animation: light-sweep 18s ease-in-out infinite alternate;
     }
     .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.12fr .88fr; align-items: center; gap: 68px; }
     .hero .eyebrow { color: var(--teal); }
@@ -175,6 +190,20 @@
       border: 1px solid rgb(36 214 189 / 20%);
       border-radius: 50%;
       box-shadow: 0 0 0 34px rgb(36 214 189 / 3%), 0 0 0 70px rgb(36 214 189 / 2%);
+      animation: orbit-pulse 8s ease-in-out infinite;
+    }
+    .visual-orbit::after {
+      position: absolute;
+      top: 12%;
+      left: 50%;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 18px 5px rgb(36 214 189 / 36%);
+      content: "";
+      transform: translateX(-50%);
+      animation: orbit-glow 4s ease-in-out infinite alternate;
     }
     .security-card {
       position: relative;
@@ -184,6 +213,7 @@
       border-radius: 22px;
       background: linear-gradient(145deg, rgb(29 52 77 / 94%), rgb(15 31 51 / 94%));
       box-shadow: 0 32px 80px rgb(0 0 0 / 25%);
+      animation: card-float 7s ease-in-out infinite;
     }
     .security-top { display: flex; align-items: center; justify-content: space-between; color: #afbdd0; font-size: .76rem; }
     .live { display: inline-flex; align-items: center; gap: 7px; color: #80ecd9; }
@@ -198,6 +228,8 @@
       background: linear-gradient(145deg, rgb(36 214 189 / 24%), rgb(36 214 189 / 6%));
       color: var(--teal);
       font-size: 3rem;
+      filter: drop-shadow(0 0 18px rgb(36 214 189 / 16%));
+      animation: shield-breathe 5s ease-in-out infinite;
     }
     .status-title { margin: 0; color: white; text-align: center; font-size: 1.1rem; font-weight: 800; }
     .status-subtitle { margin: 4px 0 0; color: #9fafc2; text-align: center; font-size: .8rem; }
@@ -377,6 +409,31 @@
     }
     .whatsapp-float:hover { transform: translateY(-3px); background: #128957; }
 
+    @keyframes ambient-drift {
+      from { transform: translate3d(-1.5%, -1%, 0) scale(1); }
+      to { transform: translate3d(1.5%, 1%, 0) scale(1.04); }
+    }
+    @keyframes light-sweep {
+      from { opacity: .45; translate: -10px 0; }
+      to { opacity: 1; translate: 16px 0; }
+    }
+    @keyframes orbit-pulse {
+      0%, 100% { transform: scale(.97); opacity: .72; }
+      50% { transform: scale(1.035); opacity: 1; }
+    }
+    @keyframes orbit-glow {
+      from { opacity: .58; box-shadow: 0 0 12px 3px rgb(36 214 189 / 26%); }
+      to { opacity: 1; box-shadow: 0 0 22px 7px rgb(36 214 189 / 42%); }
+    }
+    @keyframes card-float {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -8px; }
+    }
+    @keyframes shield-breathe {
+      0%, 100% { opacity: .86; }
+      50% { opacity: 1; }
+    }
+
     .site-footer { padding: 27px 0; background: #07111f; color: #aebacc; }
     .footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; }
     .footer-inner p { margin: 0; font-size: .78rem; }
@@ -431,7 +488,12 @@
       .field-wide, .form-note { grid-column: auto; }
     }
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 </head>
