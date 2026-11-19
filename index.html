@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1728">
+  <meta name="description" content="Instalación de cámaras de seguridad, control de acceso y asistencia, videoporteros, domótica y soluciones tecnológicas a la medida.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es">
+  <meta property="og:title" content="SOLUTECH INTEGRAL | Seguridad y tecnología">
+  <meta property="og:description" content="Cámaras de seguridad, control de acceso, videoporteros, domótica y soluciones tecnológicas diseñadas para cada necesidad.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>SOLUTECH INTEGRAL | Seguridad y tecnología</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #122139;
+      --muted: #64748b;
+      --navy: #0b1728;
+      --navy-soft: #13243b;
+      --teal: #24d6bd;
+      --teal-dark: #078c7d;
+      --paper: #f5f8fb;
+      --white: #fff;
+      --line: #e4eaf0;
+      --radius: 20px;
+      --shadow: 0 18px 55px rgb(12 30 54 / 10%);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--teal-dark);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      width: 21px;
+      height: 2px;
+      content: "";
+      background: currentColor;
+    }
+    .section { padding: 104px 0; }
+    .section-heading { max-width: 650px; margin-bottom: 42px; }
+    .section-heading h2 {
+      margin: 14px 0 12px;
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      line-height: 1.12;
+      letter-spacing: -.045em;
+    }
+    .section-heading p { max-width: 580px; margin: 0; color: var(--muted); font-size: 1.05rem; }
+
+    .site-header {
+      position: sticky;
+      z-index: 5;
+      top: 0;
+      border-bottom: 1px solid rgb(255 255 255 / 8%);
+      background: rgb(11 23 40 / 96%);
+      backdrop-filter: blur(14px);
+    }
+    .nav {
+      display: flex;
+      min-height: 76px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 11px; color: var(--white); }
+    .brand-mark {
+      display: grid;
+      width: 39px;
+      height: 39px;
+      place-items: center;
+      border: 1px solid rgb(36 214 189 / 45%);
+      border-radius: 12px;
+      color: var(--teal);
+      font-size: 1.05rem;
+      font-weight: 900;
+    }
+    .brand-name { font-size: .95rem; font-weight: 850; letter-spacing: .025em; line-height: 1.15; }
+    .brand-name span { display: block; color: #a7b5c8; font-size: .65rem; font-weight: 650; letter-spacing: .2em; }
+    .nav-links { display: flex; align-items: center; gap: 30px; color: #c4cfdd; font-size: .88rem; font-weight: 650; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--teal); }
+    .nav-cta {
+      padding: 10px 17px;
+      border: 1px solid rgb(36 214 189 / 55%);
+      border-radius: 9px;
+      color: var(--teal);
+    }
+    .menu-toggle {
+      display: none;
+      padding: 8px 11px;
+      border: 1px solid #405068;
+      border-radius: 8px;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 94px 0 88px;
+      background:
+        radial-gradient(ellipse at 82% 32%, rgb(36 214 189 / 14%), transparent 35%),
+        radial-gradient(ellipse at 10% 110%, rgb(40 101 166 / 17%), transparent 40%),
+        var(--navy);
+      color: var(--white);
+    }
+    .hero::after {
+      position: absolute;
+      top: 0;
+      right: -9%;
+      width: 48%;
+      height: 100%;
+      border-left: 1px solid rgb(255 255 255 / 5%);
+      content: "";
+      transform: skewX(-19deg);
+      pointer-events: none;
+    }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.12fr .88fr; align-items: center; gap: 68px; }
+    .hero .eyebrow { color: var(--teal); }
+    .hero h1 {
+      max-width: 700px;
+      margin: 19px 0 20px;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.01;
+      letter-spacing: -.055em;
+    }
+    .hero h1 span { color: var(--teal); }
+    .hero-copy { max-width: 570px; margin: 0; color: #b7c4d5; font-size: 1.12rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 32px; }
+    .button {
+      display: inline-flex;
+      min-height: 49px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 19px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      font-size: .92rem;
+      font-weight: 800;
+      transition: transform .18s ease, background .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--teal); color: #06221f; }
+    .button-primary:hover { background: #54e6d2; }
+    .button-quiet { border-color: #435168; color: var(--white); }
+    .button-quiet:hover { background: rgb(255 255 255 / 7%); }
+    .hero-note { display: flex; align-items: center; gap: 10px; margin-top: 29px; color: #a9b7c9; font-size: .83rem; }
+    .hero-note strong { color: var(--white); }
+    .hero-visual { position: relative; min-height: 375px; display: grid; place-items: center; }
+    .visual-orbit {
+      position: absolute;
+      width: min(340px, 85%);
+      aspect-ratio: 1;
+      border: 1px solid rgb(36 214 189 / 20%);
+      border-radius: 50%;
+      box-shadow: 0 0 0 34px rgb(36 214 189 / 3%), 0 0 0 70px rgb(36 214 189 / 2%);
+    }
+    .security-card {
+      position: relative;
+      width: min(345px, 92%);
+      padding: 26px;
+      border: 1px solid rgb(255 255 255 / 12%);
+      border-radius: 22px;
+      background: linear-gradient(145deg, rgb(29 52 77 / 94%), rgb(15 31 51 / 94%));
+      box-shadow: 0 32px 80px rgb(0 0 0 / 25%);
+    }
+    .security-top { display: flex; align-items: center; justify-content: space-between; color: #afbdd0; font-size: .76rem; }
+    .live { display: inline-flex; align-items: center; gap: 7px; color: #80ecd9; }
+    .live::before { width: 7px; height: 7px; border-radius: 50%; background: currentColor; content: ""; box-shadow: 0 0 12px currentColor; }
+    .shield {
+      display: grid;
+      width: 122px;
+      height: 137px;
+      margin: 29px auto 23px;
+      place-items: center;
+      clip-path: polygon(50% 0, 94% 16%, 89% 65%, 73% 86%, 50% 100%, 27% 86%, 11% 65%, 6% 16%);
+      background: linear-gradient(145deg, rgb(36 214 189 / 24%), rgb(36 214 189 / 6%));
+      color: var(--teal);
+      font-size: 3rem;
+    }
+    .status-title { margin: 0; color: white; text-align: center; font-size: 1.1rem; font-weight: 800; }
+    .status-subtitle { margin: 4px 0 0; color: #9fafc2; text-align: center; font-size: .8rem; }
+    .status-bar { display: flex; justify-content: space-between; margin-top: 23px; padding-top: 16px; border-top: 1px solid rgb(255 255 255 / 10%); color: #aebacc; font-size: .74rem; }
+    .status-bar strong { color: #80ecd9; }
+    .floating-tag {
+      position: absolute;
+      right: -11px;
+      bottom: 36px;
+      padding: 12px 15px;
+      border: 1px solid rgb(255 255 255 / 10%);
+      border-radius: 12px;
+      background: #1c3048;
+      box-shadow: var(--shadow);
+      color: #dce5ef;
+      font-size: .78rem;
+      font-weight: 750;
+    }
+    .floating-tag span { margin-right: 7px; color: var(--teal); }
+
+    .trust-strip { padding: 25px 0; border-bottom: 1px solid var(--line); background: #fbfcfe; }
+    .trust-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 30px; }
+    .trust-label { color: var(--muted); font-size: .83rem; font-weight: 650; }
+    .trust-item { display: inline-flex; align-items: center; gap: 9px; color: #31415a; font-size: .82rem; font-weight: 750; }
+    .trust-icon { color: var(--teal-dark); font-size: 1rem; }
+
+    .services { background: var(--paper); }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .service-card {
+      min-height: 235px;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .service-card:hover { transform: translateY(-4px); border-color: #b7e9e3; box-shadow: var(--shadow); }
+    .service-icon {
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      border-radius: 13px;
+      background: #e5faf6;
+      color: var(--teal-dark);
+      font-size: 1.25rem;
+      font-weight: 850;
+    }
+    .service-card h3 { margin: 20px 0 8px; font-size: 1.08rem; letter-spacing: -.02em; }
+    .service-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .service-link { display: inline-block; margin-top: 16px; color: var(--teal-dark); font-size: .83rem; font-weight: 800; }
+
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 75px; }
+    .about-visual {
+      position: relative;
+      min-height: 390px;
+      overflow: hidden;
+      border-radius: 28px;
+      background:
+        linear-gradient(155deg, rgb(11 23 40 / 12%), rgb(11 23 40 / 84%)),
+        radial-gradient(circle at 50% 42%, #55e5d1 0 5%, transparent 5.5%),
+        radial-gradient(circle at 50% 42%, #1a6871 0 16%, transparent 16.5%),
+        linear-gradient(135deg, #193b54, #0b1728 72%);
+    }
+    .about-visual::before, .about-visual::after {
+      position: absolute;
+      top: 42%;
+      left: 50%;
+      width: 220px;
+      height: 220px;
+      border: 1px solid rgb(75 233 211 / 25%);
+      border-radius: 50%;
+      content: "";
+      transform: translate(-50%, -50%);
+    }
+    .about-visual::after { width: 310px; height: 310px; border-color: rgb(75 233 211 / 13%); }
+    .about-chip {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      left: 22px;
+      padding: 17px 19px;
+      border: 1px solid rgb(255 255 255 / 13%);
+      border-radius: 15px;
+      background: rgb(11 23 40 / 77%);
+      color: white;
+      backdrop-filter: blur(10px);
+    }
+    .about-chip strong { display: block; font-size: .94rem; }
+    .about-chip span { color: #b1c0d0; font-size: .8rem; }
+    .about-copy h2 { margin: 14px 0; font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.1; letter-spacing: -.045em; }
+    .about-copy > p { margin: 0; color: var(--muted); }
+    .value-list { display: grid; gap: 15px; margin: 26px 0 0; padding: 0; list-style: none; }
+    .value-list li { display: flex; align-items: flex-start; gap: 12px; color: #34445a; font-size: .92rem; }
+    .check { display: grid; width: 23px; height: 23px; flex: 0 0 23px; place-items: center; border-radius: 50%; background: #e5faf6; color: var(--teal-dark); font-size: .75rem; font-weight: 900; }
+
+    .testimonials { background: var(--navy); color: white; }
+    .testimonials .eyebrow { color: var(--teal); }
+    .testimonials .section-heading p { color: #aebcce; }
+    .testimonial-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 32px;
+      border: 1px solid rgb(255 255 255 / 12%);
+      border-radius: var(--radius);
+      background: var(--navy-soft);
+    }
+    .testimonial-panel > div { max-width: 700px; }
+    .testimonial-panel h3 { margin: 0 0 8px; font-size: 1.2rem; }
+    .testimonial-panel p { margin: 0; color: #b2bfd0; font-size: .94rem; }
+    .quote-mark { color: var(--teal); font-size: 2.8rem; line-height: 1; }
+    .testimonial-panel .button { flex: 0 0 auto; }
+
+    .contact { background: var(--paper); }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 68px; }
+    .contact-copy h2 { margin: 14px 0; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -.045em; }
+    .contact-copy > p { margin: 0; color: var(--muted); }
+    .contact-points { display: grid; gap: 14px; margin-top: 28px; }
+    .contact-point { display: flex; align-items: center; gap: 12px; color: #34445a; font-size: .9rem; font-weight: 700; }
+    .contact-point .service-icon { width: 39px; height: 39px; font-size: 1rem; }
+    .contact-point a { overflow-wrap: anywhere; }
+    .contact-point a:hover { color: var(--teal-dark); text-decoration: underline; }
+    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 27px; border: 1px solid var(--line); border-radius: var(--radius); background: white; box-shadow: 0 14px 40px rgb(12 30 54 / 5%); }
+    .field { display: grid; gap: 7px; }
+    .field-wide { grid-column: 1 / -1; }
+    .field label { color: #34445a; font-size: .8rem; font-weight: 800; }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid #dce4ec;
+      border-radius: 9px;
+      outline: none;
+      background: #fbfcfe;
+      color: var(--ink);
+    }
+    .field select { min-height: 47px; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--teal-dark); box-shadow: 0 0 0 3px rgb(36 214 189 / 15%); }
+    .field textarea { min-height: 115px; resize: vertical; }
+    .form-note { grid-column: 1 / -1; margin: -4px 0 0; color: var(--muted); font-size: .75rem; }
+    .contact-form .button { justify-self: start; cursor: pointer; }
+    .solutions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .solution-card { padding: 25px; border: 1px solid var(--line); border-radius: var(--radius); background: #fbfcfe; }
+    .solution-card h3 { margin: 15px 0 8px; font-size: 1.08rem; }
+    .solution-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .process { background: var(--paper); }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .process-step { padding: 23px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .process-number { color: var(--teal-dark); font-size: .78rem; font-weight: 900; letter-spacing: .12em; }
+    .process-step h3 { margin: 12px 0 8px; font-size: 1rem; }
+    .process-step p { margin: 0; color: var(--muted); font-size: .87rem; }
+    .faq { background: var(--paper); }
+    .faq-list { display: grid; gap: 12px; max-width: 850px; }
+    .faq-list details { padding: 18px 20px; border: 1px solid var(--line); border-radius: 13px; background: white; }
+    .faq-list summary { color: var(--ink); font-weight: 800; cursor: pointer; }
+    .faq-list details p { margin: 12px 0 0; color: var(--muted); font-size: .92rem; }
+    .contact-availability { margin-top: 21px; padding: 14px 16px; border-left: 3px solid var(--teal-dark); border-radius: 0 9px 9px 0; background: #eafaf7; color: #355467; font-size: .84rem; }
+    .whatsapp-float {
+      position: fixed;
+      z-index: 6;
+      right: 22px;
+      bottom: 22px;
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 17px;
+      border: 1px solid rgb(255 255 255 / 28%);
+      border-radius: 999px;
+      background: #18a96b;
+      box-shadow: 0 10px 28px rgb(4 42 32 / 25%);
+      color: white;
+      font-size: .88rem;
+      font-weight: 800;
+      transition: transform .18s ease, background .18s ease;
+    }
+    .whatsapp-float:hover { transform: translateY(-3px); background: #128957; }
+
+    .site-footer { padding: 27px 0; background: #07111f; color: #aebacc; }
+    .footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; }
+    .footer-inner p { margin: 0; font-size: .78rem; }
+    .footer-brand { color: white; font-size: .84rem; font-weight: 800; }
+    .footer-links { display: flex; gap: 19px; font-size: .78rem; }
+    .footer-links a:hover { color: var(--teal); }
+
+    :focus-visible { outline: 3px solid #67e9d8; outline-offset: 3px; }
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr .75fr; gap: 24px; }
+      .hero-visual { min-height: 330px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .solutions-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .about-grid, .contact-grid { gap: 38px; }
+    }
+    @media (max-width: 680px) {
+      .container { width: min(100% - 36px, 520px); }
+      .section { padding: 76px 0; }
+      .menu-toggle { display: inline-flex; }
+      .nav { min-height: 68px; }
+      .nav-links {
+        position: absolute;
+        top: 67px;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 9px 18px 18px;
+        border-bottom: 1px solid #31425a;
+        background: var(--navy);
+      }
+      .nav-links.is-open { display: flex; flex-direction: column; }
+      .nav-links a { padding: 12px 6px; }
+      .nav-links .nav-cta { margin-top: 5px; text-align: center; }
+      .hero { padding: 65px 0 58px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: clamp(2.75rem, 12vw, 4.3rem); }
+      .hero-visual { min-height: 325px; margin-top: 6px; }
+      .floating-tag { right: 0; }
+      .trust-inner { justify-content: flex-start; }
+      .trust-label { flex-basis: 100%; }
+      .service-grid { grid-template-columns: 1fr; }
+      .solutions-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: auto; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .about-visual { min-height: 310px; }
+      .testimonial-panel { align-items: flex-start; flex-direction: column; padding: 25px; }
+      .contact-form { grid-template-columns: 1fr; padding: 21px; }
+      .field-wide, .form-note { grid-column: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="SOLUTECH INTEGRAL, inicio">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-name">SOLUTECH INTEGRAL<span>SEGURIDAD + TECNOLOGÍA</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menú</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#soluciones">Soluciones</a>
+        <a href="#testimonios">Testimonios</a>
+        <a class="nav-cta" href="#contacto">Hablemos <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-grid container">
+        <div>
+          <span class="eyebrow">Tecnología que te acompaña</span>
+          <h1>Protegemos lo que importa. <span>Conectamos tu futuro.</span></h1>
+          <p class="hero-copy">Soluciones integrales de seguridad e informática para empresas, hogares y comunidades. Tecnología confiable, atención cercana y respuestas a tu medida.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contacto">Solicita una asesoría <span aria-hidden="true">→</span></a>
+            <a class="button button-quiet" href="#servicios">Conoce nuestros servicios</a>
+          </div>
+          <div class="hero-note"><strong>Un solo aliado tecnológico.</strong> Seguridad e informática en un mismo lugar.</div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="visual-orbit"></div>
+          <div class="security-card">
+            <div class="security-top"><span>SOLUTECH · PROTECCIÓN</span><span class="live">Enfoque integral</span></div>
+            <div class="shield">⌑</div>
+            <p class="status-title">Tu tranquilidad, primero</p>
+            <p class="status-subtitle">Tecnología pensada para proteger y conectar</p>
+            <div class="status-bar"><span>Seguridad + informática</span><strong>Soluciones a medida</strong></div>
+          </div>
+          <div class="floating-tag"><span>✦</span> Atención para cada necesidad</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip" aria-label="Áreas de atención">
+      <div class="trust-inner container">
+        <span class="trust-label">Soluciones para:</span>
+        <span class="trust-item"><span class="trust-icon" aria-hidden="true">▦</span> Empresas</span>
+        <span class="trust-item"><span class="trust-icon" aria-hidden="true">⌂</span> Hogares</span>
+        <span class="trust-item"><span class="trust-icon" aria-hidden="true">◎</span> Comunidades</span>
+        <span class="trust-item"><span class="trust-icon" aria-hidden="true">⌘</span> Profesionales</span>
+      </div>
+    </div>
+
+    <section class="section services" id="servicios">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Nuestros servicios</span>
+          <h2>Seguridad y tecnología, diseñadas para ti.</h2>
+          <p>Instalamos y configuramos soluciones según el espacio, las personas y la forma en que necesitas proteger y conectar tu propiedad.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">◉</span>
+            <h3>Cámaras de seguridad</h3>
+            <p>Asesoría e instalación de videovigilancia para hogares, comercios, oficinas y otros espacios.</p>
+            <a class="service-link" href="#contacto">Consultar servicio <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">⌑</span>
+            <h3>Control de acceso y asistencia</h3>
+            <p>Sistemas para gestionar entradas y apoyar el registro de asistencia de acuerdo con cada operación.</p>
+            <a class="service-link" href="#contacto">Consultar servicio <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">⌘</span>
+            <h3>Videoporteros</h3>
+            <p>Soluciones para identificar y atender a quien llama antes de permitir el ingreso.</p>
+            <a class="service-link" href="#contacto">Consultar servicio <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">⌁</span>
+            <h3>Domótica</h3>
+            <p>Integración de tecnología para controlar funciones del espacio de forma más cómoda y práctica.</p>
+            <a class="service-link" href="#contacto">Consultar servicio <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">↻</span>
+            <h3>Informática, redes y soporte</h3>
+            <p>Apoyo en equipos, conectividad y necesidades informáticas para personas y organizaciones.</p>
+            <a class="service-link" href="#contacto">Consultar servicio <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">✦</span>
+            <h3>Soluciones de seguridad a medida</h3>
+            <p>Combinamos tecnologías y componentes según tus necesidades, prioridades y espacio.</p>
+            <a class="service-link" href="#contacto">Diseñar una solución <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section solutions" id="soluciones">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Una solución para cada espacio</span>
+          <h2>Cuéntanos cómo es tu día a día. Diseñamos a partir de eso.</h2>
+          <p>No todas las necesidades de seguridad son iguales. Te ayudamos a encontrar una combinación adecuada para tu espacio.</p>
+        </div>
+        <div class="solutions-grid">
+          <article class="solution-card">
+            <span class="service-icon" aria-hidden="true">⌂</span>
+            <h3>Hogares</h3>
+            <p>Cámaras, videoportero y domótica para cuidar tu vivienda y facilitar el control cotidiano.</p>
+          </article>
+          <article class="solution-card">
+            <span class="service-icon" aria-hidden="true">▦</span>
+            <h3>Empresas y comercios</h3>
+            <p>Videovigilancia y control de acceso o asistencia, pensados para la dinámica de tu equipo.</p>
+          </article>
+          <article class="solution-card">
+            <span class="service-icon" aria-hidden="true">◎</span>
+            <h3>Comunidades y otros espacios</h3>
+            <p>Alternativas integrales que se definen contigo, según los espacios y necesidades por atender.</p>
+          </article>
+        </div>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#contacto">Cuéntanos tu necesidad <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="proceso">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Así empieza tu proyecto</span>
+          <h2>Un proceso claro, desde la primera conversación.</h2>
+          <p>Primero entendemos lo que necesitas; después conversamos sobre una alternativa adecuada para tu espacio.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step">
+            <span class="process-number">PASO 01</span>
+            <h3>Nos cuentas tu necesidad</h3>
+            <p>Comparte qué deseas proteger o mejorar, el tipo de espacio y tu ciudad o zona.</p>
+          </article>
+          <article class="process-step">
+            <span class="process-number">PASO 02</span>
+            <h3>Revisamos el contexto</h3>
+            <p>Conversamos sobre tus prioridades y la información necesaria para entender el proyecto.</p>
+          </article>
+          <article class="process-step">
+            <span class="process-number">PASO 03</span>
+            <h3>Planteamos una solución</h3>
+            <p>Definimos contigo una propuesta acorde con la necesidad y el alcance conversado.</p>
+          </article>
+          <article class="process-step">
+            <span class="process-number">PASO 04</span>
+            <h3>Coordinamos la implementación</h3>
+            <p>Una vez aprobada la propuesta, coordinamos los siguientes pasos y la instalación acordada.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="nosotros">
+      <div class="about-grid container">
+        <div class="about-visual" role="img" aria-label="Ilustración abstracta de una red tecnológica protegida">
+          <div class="about-chip"><strong>Un aliado para tu tranquilidad</strong><span>Seguridad e informática con atención cercana.</span></div>
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow">Conócenos</span>
+          <h2>Tecnología útil, trato humano.</h2>
+          <p>En SOLUTECH INTEGRAL acercamos soluciones de seguridad e informática a empresas y personas. Queremos que cada cliente encuentre una opción práctica, confiable y acorde con lo que realmente necesita.</p>
+          <ul class="value-list">
+            <li><span class="check" aria-hidden="true">✓</span><span><strong>Escuchamos primero:</strong> entendemos tu espacio y tus prioridades antes de recomendar.</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span><strong>Soluciones integrales:</strong> seguridad e informática con un mismo punto de contacto.</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span><strong>Acompañamiento cercano:</strong> orientación clara desde la consulta inicial.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials" id="testimonios">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Testimonios</span>
+          <h2>Tu experiencia también cuenta.</h2>
+          <p>Las recomendaciones ayudan a otras personas a elegir con confianza. Compartiremos opiniones reales, siempre con autorización.</p>
+        </div>
+        <div class="testimonial-panel">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <div>
+            <h3>¿Ya trabajaste con SOLUTECH INTEGRAL?</h3>
+            <p>Nos encantaría conocer tu opinión. Escríbenos por WhatsApp y cuéntanos cómo fue tu experiencia.</p>
+          </div>
+          <a class="button button-primary" href="https://wa.me/573003294896?text=Hola%2C%20quiero%20compartir%20mi%20experiencia%20con%20SOLUTECH%20INTEGRAL." target="_blank" rel="noopener noreferrer">Compartir opinión <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="preguntas">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h2>Antes de empezar, resolvamos tus dudas.</h2>
+          <p>Si necesitas más información, escríbenos y conversamos sobre tu caso.</p>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>¿Pueden proponer una solución según mis necesidades?</summary>
+            <p>Sí. Cuéntanos qué espacio necesitas proteger, qué te preocupa y qué resultado buscas. Revisamos esa información para orientarte sobre una alternativa a medida.</p>
+          </details>
+          <details>
+            <summary>¿Qué servicios ofrecen?</summary>
+            <p>Instalación de cámaras de seguridad, control de acceso y asistencia, videoporteros, domótica, soluciones de seguridad personalizadas y servicios de informática y redes.</p>
+          </details>
+          <details>
+            <summary>¿Atienden hogares y empresas?</summary>
+            <p>Sí, atendemos necesidades de personas, hogares, empresas y otros espacios. La solución se define según cada caso.</p>
+          </details>
+          <details>
+            <summary>¿En qué ciudades prestan servicio?</summary>
+            <p>Compártenos tu ciudad o zona por WhatsApp o correo y te confirmaremos la cobertura y disponibilidad para tu solicitud.</p>
+          </details>
+          <details>
+            <summary>¿Cómo solicito una cotización?</summary>
+            <p>Completa el formulario con tu medio de contacto preferido y una descripción breve. Se abrirá WhatsApp o tu aplicación de correo con el mensaje preparado para que lo revises y lo envíes.</p>
+          </details>
+          <details>
+            <summary>¿Cuál es el horario de atención?</summary>
+            <p>Escríbenos por WhatsApp o correo para confirmar disponibilidad y coordinar la atención de tu solicitud.</p>
+          </details>
+          <details>
+            <summary>¿Cómo se deben manejar las cámaras y las grabaciones?</summary>
+            <p>La ubicación de cámaras, las personas autorizadas para acceder a las imágenes y los tiempos de conservación deben definirse de forma responsable y conforme a las normas aplicables. Estos aspectos se deben conversar para cada proyecto.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contacto">
+      <div class="contact-grid container">
+        <div class="contact-copy">
+          <span class="eyebrow">Contacto</span>
+          <h2>Hablemos de lo que necesitas.</h2>
+          <p>Cuéntanos un poco sobre tu proyecto. Nos pondremos en contacto para orientarte y explorar juntos la mejor solución.</p>
+          <div class="contact-points">
+            <div class="contact-point"><span class="service-icon" aria-hidden="true">✓</span><span>Atención personalizada</span></div>
+            <div class="contact-point"><span class="service-icon" aria-hidden="true">↗</span><span>Orientación sin complicaciones</span></div>
+            <div class="contact-point"><span class="service-icon" aria-hidden="true">⌂</span><span>Soluciones para empresas y personas</span></div>
+            <div class="contact-point"><span class="service-icon" aria-hidden="true">@</span><a href="mailto:soluciones@solutech.com">soluciones@solutech.com</a></div>
+            <div class="contact-point"><span class="service-icon" aria-hidden="true">☎</span><a href="tel:+573003294896">300 329 4896 · Llamar</a></div>
+            <div class="contact-point"><span class="service-icon" aria-hidden="true">◉</span><a href="https://wa.me/573003294896" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a></div>
+          </div>
+          <p class="contact-availability">Cuéntanos tu ciudad o zona y te confirmaremos cobertura y disponibilidad.</p>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="field">
+            <label for="name">Nombre</label>
+            <input id="name" name="name" autocomplete="name" required placeholder="Tu nombre">
+          </div>
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com">
+          </div>
+          <div class="field">
+            <label for="phone">Teléfono o WhatsApp</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Tu número de contacto">
+          </div>
+          <div class="field">
+            <label for="city">Ciudad o zona</label>
+            <input id="city" name="city" autocomplete="address-level2" placeholder="¿Dónde necesitas el servicio?">
+          </div>
+          <div class="field">
+            <label for="customer-type">¿Para quién es la solución?</label>
+            <select id="customer-type" name="customer-type">
+              <option value="">Selecciona una opción</option>
+              <option>Hogar</option>
+              <option>Empresa o comercio</option>
+              <option>Comunidad u otro espacio</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="service">¿Qué servicio te interesa?</label>
+            <select id="service" name="service">
+              <option value="">Quiero asesoría</option>
+              <option>Cámaras de seguridad</option>
+              <option>Control de acceso y asistencia</option>
+              <option>Videoportero</option>
+              <option>Domótica</option>
+              <option>Informática, redes y soporte</option>
+              <option>Solución de seguridad a medida</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="field field-wide">
+            <label for="contact-method">¿Cómo prefieres que te contactemos?</label>
+            <select id="contact-method" name="contact-method">
+              <option value="whatsapp">WhatsApp</option>
+              <option value="email">Correo electrónico</option>
+            </select>
+          </div>
+          <div class="field field-wide">
+            <label for="message">Cuéntanos más</label>
+            <textarea id="message" name="message" required placeholder="Describe brevemente lo que necesitas"></textarea>
+          </div>
+          <p class="form-note">El mensaje se preparará en WhatsApp o en tu aplicación de correo, según elijas. No se guarda en esta página.</p>
+          <button class="button button-primary" type="submit">Continuar con mi consulta <span aria-hidden="true">→</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <a class="footer-brand" href="#inicio">SOLUTECH INTEGRAL</a>
+      <p>Seguridad e informática para un mundo conectado.</p>
+      <div class="footer-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#preguntas">Preguntas frecuentes</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <p>© <span id="year"></span> SOLUTECH INTEGRAL</p>
+    </div>
+  </footer>
+  <a class="whatsapp-float" href="https://wa.me/573003294896?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20soluciones%20de%20seguridad%20e%20inform%C3%A1tica." target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">◉ <span>WhatsApp</span></a>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+      navLinks.classList.toggle("is-open", !isExpanded);
+    });
+
+    navLinks.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        menuToggle.setAttribute("aria-expanded", "false");
+        navLinks.classList.remove("is-open");
+      }
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+
+    const contactMethod = document.querySelector("#contact-method");
+    const emailField = document.querySelector("#email");
+    const updateEmailRequirement = () => {
+      emailField.required = contactMethod.value === "email";
+    };
+    contactMethod.addEventListener("change", updateEmailRequirement);
+    updateEmailRequirement();
+
+    document.querySelector("#contact-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      const message = [
+        "Hola, quiero solicitar información a SOLUTECH INTEGRAL.",
+        `Nombre: ${formData.get("name")}`,
+        `Correo: ${formData.get("email")}`,
+        `Teléfono o WhatsApp: ${formData.get("phone") || "No indicado"}`,
+        `Ciudad o zona: ${formData.get("city") || "No indicada"}`,
+        `Tipo de cliente: ${formData.get("customer-type") || "No indicado"}`,
+        `Servicio: ${formData.get("service") || "Quiero asesoría"}`,
+        `Mensaje: ${formData.get("message")}`
+      ].join("\n");
+      if (formData.get("contact-method") === "email") {
+        const subject = encodeURIComponent(`Consulta desde el sitio web: ${formData.get("service") || "SOLUTECH INTEGRAL"}`);
+        window.location.href = `mailto:soluciones@solutech.com?subject=${subject}&body=${encodeURIComponent(message)}`;
+      } else {
+        window.open(`https://wa.me/573003294896?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+      }
+    });
+  </script>
+</body>
+</html>
